@@ -1,26 +1,176 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import 'tailwindcss';
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {
+  --color-background: #1A202C;
+  --color-foreground: #FFFFFF;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-card: #1A202C;
+  --color-card-foreground: #E2E8F0;
+
+  --color-popover: #1A202C;
+  --color-popover-foreground: #E2E8F0;
+
+  --color-primary: #D4AF37;
+  --color-primary-foreground: #FFFFFF;
+
+  --color-secondary: #FF6B35;
+  --color-secondary-foreground: #FFFFFF;
+
+  --color-muted: #2D3748;
+  --color-muted-foreground: #E2E8F0;
+
+  --color-accent: #2D3748;
+  --color-accent-foreground: #E2E8F0;
+
+  --color-destructive: #E53E3E;
+  --color-destructive-foreground: #FFFFFF;
+
+  --color-border: #4A5568;
+  --color-input: #4A5568;
+  --color-ring: #D4AF37;
+
+  --color-chart-1: #e67e22;
+  --color-chart-2: #FF6B35;
+  --color-chart-3: #1e3a5f;
+  --color-chart-4: #f1c40f;
+  --color-chart-5: #e74c3c;
+
+  --color-urated-primary-background: #1A202C;
+  --color-urated-accent-primary: #D4AF37;
+  --color-urated-accent-secondary: #FF6B35;
+  --color-urated-text-primary: #FFFFFF;
+  --color-urated-text-secondary: #A0AEC0;
+
+  --font-heading: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: #4A5568; /* Ensuring default border color aligns with the design system */
+  }
+}
+
+@layer utilities {
+  body {
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer base {
+  :root {
+    --background: var(--color-urated-primary-background);
+    --foreground: var(--color-urated-text-primary);
+    --card: var(--color-urated-primary-background);
+    --card-foreground: var(--color-urated-text-primary);
+    --popover: var(--color-urated-primary-background);
+    --popover-foreground: var(--color-urated-text-primary);
+    --primary: var(--color-urated-accent-primary);
+    --primary-foreground: var(--color-urated-text-primary);
+    --secondary: var(--color-urated-accent-secondary);
+    --secondary-foreground: var(--color-urated-primary-background);
+    --muted: #2D3748;
+    --muted-foreground: var(--color-urated-text-secondary);
+    --accent: var(--color-urated-accent-primary);
+    --accent-foreground: var(--color-urated-primary-background);
+    --destructive: #EF4444;
+    --destructive-foreground: var(--color-urated-text-primary);
+    --border: var(--color-border);
+    --input: var(--color-input);
+    --ring: var(--color-ring);
+    --chart-1: var(--color-chart-1);
+    --chart-2: var(--color-chart-2);
+    --chart-3: var(--color-chart-3);
+    --chart-4: var(--color-chart-4);
+    --chart-5: var(--color-chart-5);
+    --radius: var(--radius-lg);
+  }
+
+  /* No explicit dark mode class defined as the design specification implies a single dark theme */
+  /* If a light mode ever needs to be introduced, it would go here. */
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.5;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--foreground);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  h1 {
+    font-size: 3rem; /* Example size, naturally scaled by Tailwind utility classes */
+    font-weight: 900;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+  p {
+    margin-bottom: 1rem;
+    color: var(--muted-foreground);
+  }
+  a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  code, pre {
+    font-family: var(--font-mono);
+    background-color: var(--muted);
+    color: var(--muted-foreground);
+    padding: 0.2em 0.4em;
+    border-radius: 0.2em;
+  }
 }
