@@ -46,7 +46,7 @@ export function ContactFormSocials() {
         >
           <Link 
             href={social.href} 
-            className="p-2 rounded-full bg-[var(--color-muted)] hover:bg-[#2D3748] transition-all duration-200 hover:shadow-[0_0_10px_rgba(0,183,235,0.3)]"
+            className="bg-[var(--color-muted)] hover:bg-[#2D3748] transition-all duration-200 "
           >
             {social.icon}
           </Link>

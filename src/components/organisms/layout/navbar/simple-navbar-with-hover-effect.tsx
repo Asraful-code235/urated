@@ -3,6 +3,7 @@ import { Button } from "@/components/atoms/button";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -127,11 +128,15 @@ const Logo = () => {
       href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-[#FFFFFF]"
     >
-      <div className="w-8 h-8 bg-gradient-to-r from-[#00B7EB] to-[#39FF14] rounded-lg flex items-center justify-center">
-        <span className="text-[#1A202C] font-bold text-lg">U</span>
-      </div>
-      <span className="font-medium text-[#FFFFFF] font-[var(--font-body)]">
-        <span className="text-[#00B7EB]">U</span>Rated
+       <Image
+        src="/logo.png"
+        alt="logo"
+        width={30}
+        height={30}
+        className="rounded-full object-contain w-full h-full overflow-hidden"
+      />
+      <span className="font-medium text-[#FFFFFF] sr-only">
+        <span className="text-primary">U</span>Rated
       </span>
     </Link>
   );
