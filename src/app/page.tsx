@@ -5,7 +5,6 @@ import { ClanMashupSection } from '@/components/organisms/home/ClanMashupSection
 import { LaunchTimeSection } from '@/components/organisms/home/LaunchTimeSection';
 import { EventsSection } from '@/components/organisms/home/EventsSection';
 import { BannerSection } from '@/components/organisms/home/BannerSection';
-import { NewsletterSection } from '@/components/organisms/home/NewsletterSection';
 
 export const metadata: Metadata = {
   title: 'URated - Unleash Your Game | Gaming Platform & Esports Community',
