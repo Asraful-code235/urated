@@ -7,7 +7,7 @@ export function ClientHeader() {
     <Header 
       navigation={{
         logo: {
-          src: 'https://api.builder.io/api/v1/image/assets/TEMP/41f4c9cb34c0efe94ba2606c1dc09622466372e9?width=72',
+          src: '/logo.webp',
           alt: 'URated Logo'
         },
         links: [

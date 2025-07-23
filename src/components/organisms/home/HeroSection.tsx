@@ -10,9 +10,9 @@ interface HeroSectionProps {
 }
 
 const heroData = {
-  backgroundImage: 'https://api.builder.io/api/v1/image/assets/TEMP/b2ad4a55e076556d5396c190965b4b58c381f9f4?width=3840',
+  backgroundImage: '/home/hero/background1.webp',
   logo: {
-    src: 'https://api.builder.io/api/v1/image/assets/TEMP/60d95e7f7362a0027d9379fcfbb8d63685eabc34?width=384',
+    src: '/logo.webp',
     alt: 'URated Central Logo'
   },
   title: 'Unleash Your Game',
@@ -31,7 +31,7 @@ export function HeroSection({ className }: HeroSectionProps) {
       <div className="absolute inset-0" aria-hidden="true">
         <Image
           src={heroData.backgroundImage}
-          alt=""
+          alt="background"
           fill
           priority
           sizes="100vw"
@@ -48,6 +48,8 @@ export function HeroSection({ className }: HeroSectionProps) {
             <Logo
               {...heroData.logo}
               priority
+              width={400}
+              height={400}
               className="w-32 h-32 md:w-48 md:h-48 mx-auto"
             />
           </div>

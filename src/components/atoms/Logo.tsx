@@ -9,7 +9,7 @@ export function Logo({
   width = 36,
   height = 36,
   priority = false,
-  sizes = '(max-width: 768px) 32px, 36px'
+  sizes = '(max-width: 768px) 100vw'
 }: LogoProps & {
   priority?: boolean;
   sizes?: string;
@@ -21,6 +21,7 @@ export function Logo({
       width={width}
       height={height}
       priority={priority}
+      quality={100}
       sizes={sizes}
       className={cn(
         'rounded-full transition-transform duration-300 ease-out hover:scale-105 motion-reduce:transition-none motion-reduce:hover:scale-100',
