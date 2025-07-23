@@ -9,7 +9,7 @@ interface URatedLogoProps {
 export function URatedLogo({ className, width = 72, height = 24 }: URatedLogoProps) {
   return (
     <svg 
-      className={cn('fill-white', className)} 
+      className={cn('fill-white text-white', className)} 
       width={width} 
       height={height} 
       viewBox="0 0 72 24" 
