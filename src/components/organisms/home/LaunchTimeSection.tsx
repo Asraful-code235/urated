@@ -16,13 +16,7 @@ const launchTimeData = {
   },
   title: 'URated eSPORTS',
   subtitle: 'Launches Soon',
-  description: 'Be among the first to experience the future of competitive gaming. Join the revolution that\'s transforming esports forever.',
-  countdown: {
-    days: 7,
-    hours: 12,
-    minutes: 12,
-    seconds: 12
-  }
+  description: 'Be among the first to experience the future of competitive gaming. Join the revolution that\'s transforming esports forever.'
 };
 
 export function LaunchTimeSection({ className }: LaunchTimeSectionProps) {
@@ -61,7 +55,7 @@ export function LaunchTimeSection({ className }: LaunchTimeSectionProps) {
           </div>
 
           {/* Countdown Timer */}
-          <CountdownDisplay {...launchTimeData.countdown} />
+          <CountdownDisplay />
         </div>
       </div>
     </section>
