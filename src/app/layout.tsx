@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ClientHeader } from "@/components/organisms/layout/ClientHeader";
+import { FooterSection } from "@/components/organisms/layout/FooterSection";
 import "./globals.css";
 
 const inter = Inter({
@@ -70,6 +71,7 @@ export default function RootLayout({
       >
         <ClientHeader />
         {children}
+        <FooterSection />
       </body>
     </html>
   );

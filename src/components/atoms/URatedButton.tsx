@@ -26,7 +26,7 @@ export function URatedButton({
   disabled = false,
   type = 'button'
 }: ButtonProps) {
-  const isPlayButton = variant === 'play';
+  const isPlayButton = variant === 'play' as any;
   
   return (
     <button
